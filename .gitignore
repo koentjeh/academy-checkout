@@ -1,9 +1,10 @@
 /*
 
+!/Block
 !/etc
 !/Plugin
+!/Provider
 !/view
-!/web
 
 !/.gitignore
 !/composer.json
