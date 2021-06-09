@@ -1,0 +1,13 @@
+<div>
+    SKU (Plugin): <span data-bind="text: $parents[1].sku"></span>
+</div>
+<div>
+    Description (Plugin): <span data-bind="html: $parents[1].description"></span>
+</div>
+
+<div> <!-- window.checkoutConfig.cartSummary[i].sku -->
+    SKU (Provider): Yeet <span data-bind="text: $parents[1].description"></span>
+</div>
+<div> <!-- window.checkoutConfig.cartSummary[i].description -->
+    Description (Provider): <span data-bind="html: $parents[1].description"></span>
+</div>

@@ -1,0 +1,21 @@
+<li id="custom-step" data-bind="fadeVisible: isVisible">
+    <h1 class="step-title" data-bind="i18n: 'A new custom step'" data-role="title"></h1>
+    <div id="checkout-step-title"
+         class="step-content"
+         data-role="content">
+
+        <h2>YES! Gelukt!</h2>
+
+        <!-- TODO: hier een leuk custom componentje toevoegen -->
+
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span><!-- ko i18n: 'Next'--><!-- /ko --></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>

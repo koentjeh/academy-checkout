@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Add sku & desciption using plugin -->
+    <type name="Magento\Checkout\Model\DefaultConfigProvider">
+        <plugin name="Academy_Checkout_Additional_Product_Data_Plugin" type="Academy\Checkout\Plugin\Cart\CartSummaryPlugin"/>
+    </type>
+
+    <!-- Add sku & desciption using custom ConfigProvider -->
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="Academy_Checkout_Additional_Product_Data_Provider" xsi:type="object">Academy\Checkout\Provider\Cart\CartSummaryProvider</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Layoutprocessor for custom firstname validation & postcode field -->
+    <type name="Magento\Checkout\Block\Onepage">
+        <arguments>
+            <argument name="layoutProcessors" xsi:type="array">
+                <item name="CustomCheckoutFormValidation" xsi:type="object">Academy\Checkout\Block\FormValidationLayoutProcessor</item>
+                <item name="CustomPostcodeFormField" xsi:type="object">Academy\Checkout\Block\PostcodeLayoutProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
